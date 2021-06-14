@@ -1,11 +1,12 @@
 <template>
 <form @submit="Add" method="post">
-  <label>JobCategoryID</label>
+  <label>Body</label>
   
-    <input type="text" v-model="jc.jobCategoryId" required />
- Job Category: <input type="text" v-model="jc.JobCategoryDescription" required />
+    <input type="text" v-model="jc.body" required />
+ Title: <input type="text" v-model="jc.title" required />
   <br /><br />
-  <button>add categories</button>
+  UserId:<input type="text" v-model="jc.userId" required />
+  <button>Add Post</button>
   </form>
 </template>
 
@@ -16,8 +17,9 @@ export default {
     return {
     
       jc:{
-          jobCategoryId:0,
-          JobCategoryDescription: ''
+          title:'',
+          body: '',
+          userId:0
       },
       
       jobCats: [],
@@ -25,9 +27,9 @@ export default {
   },
   methods: {
     Add(e) {
-        console.log(this.jc.jobCategoryId,this.jc.JobCategoryDescription)
+        console.log(this.jc.title,this.jc.body,this.jc.userId)
          axios
-        .post("https://localhost:44306/api/JobCategory/",this.jc )
+        .post("https://jsonplaceholder.typicode.com/posts",this.jc )
           
         e.preventDefault()
     //await axios
@@ -39,6 +41,5 @@ export default {
   },
 };
 </script>
-
 <style>
 </style>
