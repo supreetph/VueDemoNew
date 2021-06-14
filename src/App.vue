@@ -1,16 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
- <JobCategoryView/>
+
+ <JobCategoryAdd/>
 </template>
 
 <script>
 
 //import SignUp from './components/SignUp.vue'
 
-import JobCategoryView from './components/JobCategory/JobCategoryView.vue'
+//import JobCategoryView from './components/JobCategory/JobCategoryView.vue'
+import JobCategoryAdd from './components/JobCategory/JobCategoryAdd.vue'
 export default{
   name:'App',
-  components:{JobCategoryView}
+  components:{JobCategoryAdd}
 }
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
