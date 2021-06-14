@@ -6,6 +6,7 @@
 <script>
 
 //import SignUp from './components/SignUp.vue'
+
 import JobCategoryView from './components/JobCategory/JobCategoryView.vue'
 export default{
   name:'App',
