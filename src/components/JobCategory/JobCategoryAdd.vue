@@ -12,6 +12,7 @@
 
 <script>
 import axios from "axios";
+import db from '../JobCategory/firbaseinit';
 export default {
   data() {
     return {
@@ -28,9 +29,10 @@ export default {
   methods: {
     Add(e) {
         console.log(this.jc.title,this.jc.body,this.jc.userId)
-         axios
-        .post("https://jsonplaceholder.typicode.com/posts",this.jc )
-          
+         //axios
+        //.post("https://jsonplaceholder.typicode.com/posts",this.jc )
+       // const dataBase=db.collection('posts').add(this.jc);
+       // dataBase.add(this.jc)
         e.preventDefault()
     //await axios
      //   .post("https://localhost:44306/api/JobCategory/",{
