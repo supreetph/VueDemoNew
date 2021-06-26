@@ -13,7 +13,7 @@
         <option value="Post">POST</option>
       </select>
     </div>
-    <div class="input-group" col-sm-8 >
+    <div class="input-group col-sm-8 "   >
       <span class="input-group-text" id="addon-wrapping"
         >https://example.com/users/</span
       >

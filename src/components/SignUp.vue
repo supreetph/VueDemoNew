@@ -20,7 +20,8 @@
 </template>
 
 <script>
-//import axios from 'axios'
+import db from './JobCategory/firbaseinit'
+import firbaseuth from 'firebase'
 export default {
 data(){
     return{
@@ -30,8 +31,10 @@ data(){
     }
 },
 methods:{
-    logvalues(){
+    logvalues(e){
+        e.preventDefault()
         console.warn(this.email)
+        firbaseuth.auth().createUserWithEmailAndPassword(this.email,this.password).then(data=>console.log(data))
         
     }
 }
