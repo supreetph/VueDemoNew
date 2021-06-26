@@ -1,32 +1,61 @@
 <template>
-<h1>SupaMan</h1>
+  <h1>SupaMan</h1>
   <form action="">
-    <select name="selectMethod" id="" v-model="inputs.httpmethod">
-      <option value="Get">GET</option>
-      <option value="Post">POST</option>
-    </select>
-    <input type="url" v-model="inputs.apiUrl" />
-    <button type="submit" @click="Send" class="bt">Send</button><br /><br />
-    <label for="request">Request Body</label>
-    <textarea v-model="inputs.body">Request Body</textarea>
+    <div class="mb-3 col-sm-3">
+      <select
+        name="selectMethod"
+        class="form-select"
+        
+        id=""
+        v-model="inputs.httpmethod"
+      >
+        <option value="Get" selected>GET</option>
+        <option value="Post">POST</option>
+      </select>
+    </div>
+    <div class="input-group" col-sm-8 >
+      <span class="input-group-text" id="addon-wrapping"
+        >https://example.com/users/</span
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="basic-url"
+        aria-describedby="addon-wrapping"
+        v-model="inputs.apiUrl"
+        width="50%"
+      />
+    </div>
+<div class="container"></div>
+    <button type="submit" @click="Send" class="btn btn-primary">Send</button
+    ><br /><br />
+    <div class="input-group">
+      <span class="input-group-text">Request Body</span>
+
+      <textarea v-model="inputs.body" class="form-control">
+Request Body</textarea
+      >
+    </div>
   </form>
   <div>
     <div class="my-3" id="responseJsonBox">
-      <div class="form-group row">
-        Status: <label for="status">{{ ResposneMetadata.status }}</label
-        ><br />
-        <label for="responseJsonText" class="col-sm-2 col-form-label"
-          >Response</label
-        >
+      <div class="form-group row col-sm-1">
+        <br /><button type="button" class="btn btn-primary">
+          Status
+          <span class="badge bg-secondary">{{ ResposneMetadata.status }}</span>
+        </button>
 
-        <textarea
-          name="response"
-          id="response"
-          cols="30"
-          rows="10"
-          v-model="listDataString"
-        >
-        </textarea>
+        <div class="form-floating mb-3">
+          <textarea
+            name="response"
+            id="response"
+            cols="30"
+            rows="10"
+            v-model="listDataString"
+          >
+          </textarea>
+          <label for="response">Response</label>
+        </div>
       </div>
     </div>
   </div>
@@ -42,7 +71,7 @@ export default {
         apiUrl: "",
         body: {},
       },
-      listDataString: String,
+      listDataString: '',
       Response: [],
       ResposneMetadata: {
         status: 0,
