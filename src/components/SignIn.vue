@@ -29,16 +29,16 @@
       <button type="button" @click="Login" class="btn btn-primary col-sm-2">
         Sign In
       </button>
-     <div class="alert alert-info" role="alert">
- {{this.Response}}
-</div>
+      <div class="alert alert-info" role="alert">
+        {{ Response }}
+      </div>
     </div>
   </form>
 </template>
 
 <script>
-import db from './JobCategory/firbaseinit'
-import firbaseuth from 'firebase'
+import db from "./JobCategory/firbaseinit";
+import firbaseuth from "firebase";
 export default {
   data() {
     return {
@@ -46,16 +46,18 @@ export default {
         email: "",
         password: "",
       },
-      Response:''
+      Response: "",
     };
   },
   methods: {
     Login(e) {
       e.preventDefault();
       console.log(this.user.email);
-      firbaseuth.auth().signInWithEmailAndPassword(this.user.email,this.user.password).then(data=>console.log(JSON.stringify(data)))
-      this.Response=data
-
+      firbaseuth
+        .auth()
+        .signInWithEmailAndPassword(this.user.email, this.user.password)
+        .then((response) => (this.Response = JSON.stringify(response.data)));
+     console.log( this.Response);
     },
   },
 };

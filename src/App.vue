@@ -1,7 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
 
-<SignIn/>
+<JobCategoryAdd/>
 </template>
 
 <script>
@@ -10,11 +10,11 @@
 import SignIn from './components/SignIn.vue'
 
 //import JobCategoryView from './components/JobCategory/JobCategoryView.vue'
-//import JobCategoryAdd from './components/JobCategory/JobCategoryAdd.vue'
+import JobCategoryAdd from './components/JobCategory/JobCategoryAdd.vue'
 //import Postman from './components/Postman.vue'
 export default{
   name:'App',
-  components:{SignIn}
+  components:{JobCategoryAdd}
 }
 
 // This starter template is using Vue 3 experimental <script setup> SFCs

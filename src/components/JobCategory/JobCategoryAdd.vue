@@ -13,6 +13,7 @@
 <script>
 import axios from "axios";
 import db from '../JobCategory/firbaseinit';
+import fireDB from 'firebase'
 export default {
   data() {
     return {
@@ -28,12 +29,14 @@ export default {
   },
   methods: {
     Add(e) {
+      e.preventDefault()
         console.log(this.jc.title,this.jc.body,this.jc.userId)
          //axios
         //.post("https://jsonplaceholder.typicode.com/posts",this.jc )
-       // const dataBase=db.collection('posts').add(this.jc);
-       // dataBase.add(this.jc)
-        e.preventDefault()
+        fireDB.firestore().collection('posts').add(this.jc)
+        //const dataBase=db.collection('posts').add(this.jc);
+        //dataBase.add(this.jc)
+        
     //await axios
      //   .post("https://localhost:44306/api/JobCategory/",{
      //       body:this.jc
