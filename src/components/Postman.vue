@@ -94,7 +94,7 @@ export default {
         var data = JSON.stringify(this.inputs.body);
         console.log(data);
         var result = await axios.post(
-          "https://reqres.in/api/users",
+          this.inputs.apiUrl,
           this.inputs.body
         );
 
