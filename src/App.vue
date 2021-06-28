@@ -1,20 +1,20 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
 
-<JobCategoryAdd/>
+<Postman/>
 </template>
 
 <script>
 
 //import SignUp from './components/SignUp.vue'
-import SignIn from './components/SignIn.vue'
+//import SignIn from './components/SignIn.vue'
 
 //import JobCategoryView from './components/JobCategory/JobCategoryView.vue'
-import JobCategoryAdd from './components/JobCategory/JobCategoryAdd.vue'
-//import Postman from './components/Postman.vue'
+//import JobCategoryAdd from './components/JobCategory/JobCategoryAdd.vue'
+import Postman from './components/Postman.vue'
 export default{
   name:'App',
-  components:{JobCategoryAdd}
+  components:{Postman}
 }
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
